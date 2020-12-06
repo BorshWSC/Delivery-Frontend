@@ -1,2 +1,72 @@
-<router-outlet></router-outlet>
-<p>registration works!</p>
+<div class="">
+  <img src="assets/img/logo.svg" class="logo">
+  <mat-dialog-content>
+    <td-dialog-title class="title">Регистрация</td-dialog-title>
+    <form [formGroup]="form" class="form">
+      <mat-form-field class="input">
+        <mat-label><strong>Ваш Email</strong></mat-label>
+        <input type="email" matInput formControlName="email"
+               placeholder="ex.pat@example.com">
+        <mat-error *ngIf="get('email').hasError('email') && !get('email').hasError('required')">
+          <strong>Некорректный email</strong>
+        </mat-error>
+        <mat-error *ngIf="get('email').hasError('required')">
+          <strong>Email обязателен</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label><strong>Пароль</strong></mat-label>
+        <input type="password" matInput formControlName="password"
+               placeholder="******">
+        <mat-error *ngIf="get('password').hasError('required')">
+          <strong>Пароль обязателен</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label><strong>Ваше имя</strong></mat-label>
+        <input type="text" matInput formControlName="firstName"
+               placeholder="Иван">
+        <mat-error *ngIf="get('firstName').hasError('required')">
+          <strong>Имя обязательно</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label><strong>Ваша фамилия</strong></mat-label>
+        <input type="text" matInput formControlName="lastName"
+               placeholder="Иванов">
+        <mat-error *ngIf="get('lastName').hasError('required')">
+          <strong>Фамилия обязательна</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label><strong>Ваш номер телефона</strong></mat-label>
+        <input type="text" matInput formControlName="phoneNumber"
+               placeholder="+7 999 999-99-99">
+        <mat-error *ngIf="get('phoneNumber').hasError('required')">
+          <strong>Номер телефона обязателен</strong>
+        </mat-error>
+        <mat-error *ngIf="get('phoneNumber').hasError('pattern')">
+          <strong>Номер телефона должен быть формата +7 999 999-99-99</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label><strong>Ваш адрес</strong></mat-label>
+        <input type="text" matInput formControlName="address"
+               placeholder="ул. Ленина 2">
+        <mat-error *ngIf="get('address').hasError('required')">
+          <strong>Адрес обязателен</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <td-dialog-actions layout="row" layout-align="start center" layout-fill>
+    <button mat-raised-button class="center"
+            [disabled]="!enabledForm()"
+            (click)="accept()">Зарегистрироваться
+    </button>
+    <mat-error *ngIf="error" layout-align="center end">
+      <strong>Пользователь с таким email уже существует</strong>
+    </mat-error>
+  </td-dialog-actions>
+  <a (click)="goToAuth()">Уже есть аккаунт?</a>
+</div>

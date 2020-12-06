@@ -7,14 +7,4 @@ import {Router} from '@angular/router';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
-
-  constructor(
-    protected router: Router,
-  ) {
-  }
-
-  public registration(): void {
-    this.router.navigate([`/registration`], {replaceUrl: true});
-  }
-
 }

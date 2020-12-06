@@ -6,10 +6,6 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent
-  },
-  {
-    path: 'registration',
-    component: RegistrationComponent
   }
 ];
 

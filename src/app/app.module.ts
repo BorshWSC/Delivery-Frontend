@@ -1,25 +1,60 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './component/common/app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './component/common/app.component';
 import {ApiService} from './service/ApiService';
-import { RegistrationComponent } from './component/registration/registration.component';
+import {RegistrationComponent} from './component/registration/registration.component';
 import {routing} from './app-routing.module';
-import { MainComponent } from './component/main/main.component';
+import {MainComponent} from './component/main/main.component';
+import {HeaderComponent} from './component/header/header.component';
+import {UserService} from './service/UserService';
+import {AuthService} from './service/AuthService';
+import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogConfig, MatDialogModule} from '@angular/material/dialog';
+import {DialogService} from './service/DialogService';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {CovalentDialogsModule} from "@covalent/core/dialogs";
+import {MatButtonModule} from "@angular/material/button";
+import {CookieService} from "ngx-cookie-service";
+import { AuthorizationComponent } from './component/authorization/authorization.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    MainComponent
+    MainComponent,
+    HeaderComponent,
+    AuthorizationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    HttpClientModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    CovalentDialogsModule,
+    MatButtonModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    UserService,
+    AuthService,
+    DialogService,
+    MatDialogConfig,
+    CookieService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
+  entryComponents: []
 })
 export class AppModule { }

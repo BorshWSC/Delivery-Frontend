@@ -1,23 +1,23 @@
 .form {
   min-width: 600px;
   max-width: 700px;
-  min-height: 265px;
+  min-height: 200px;
   padding-top: 40px;
   width: 100%;
 }
 .logo {
   margin-top: 10px;
-  padding-left: 180px;
+  padding-left: 190px;
 }
 .input {
-  width: 250px;
   height: 60px;
   margin-left: 60px;
   margin-top: 20px;
+  width: 550px;
 }
 button {
   position: relative;
-  left: 52%;
+  left: 50%;
   width: 250px;
   color: white;
   background: #54bf29;
@@ -28,20 +28,21 @@ button {
   margin-top: 5px;
   position: relative;
   max-width: 400px;
-  left: 150px;
+  left: 195px;
 }
-.title {
-  position: relative;
-  top: 20px;
-  left: 260px;
-  font-weight: bold;
-  font-size: 24px;
+.mat-form-field {
+  display: block!important;
 }
 a {
   position: relative;
   top: 40px;
-  left: 25px;
   color: #2F3035;
   cursor: pointer;
 }
-a:hover{color: #2F3035; font-weight: bold}
+.title {
+  position: relative;
+  top: 40px;
+  right: 170px;
+  font-weight: bold;
+  font-size: 24px;
+}

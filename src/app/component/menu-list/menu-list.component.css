@@ -1,0 +1,16 @@
+.table {
+  display: block;
+  padding-left: 120px;
+}
+.list {
+  position: relative;
+  display: block;
+}
+p {
+  padding-top: 40px;
+  font-weight: 700;
+  font-size: 24px;
+}
+app-food-card {
+  margin-left: 50px;
+}

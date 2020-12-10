@@ -23,6 +23,7 @@ button {
   background: #54bf29;
   transform: translate(-55%, 0);
   margin-bottom: 5px;
+  border-radius: 70px;
 }
 .mat-error {
   margin-top: 5px;

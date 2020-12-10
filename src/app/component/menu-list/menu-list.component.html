@@ -1,0 +1,17 @@
+<div class="table">
+  <div [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Категория</mat-label>
+      <mat-select formControlName="categoryFormControl">
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{category.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <ng-container class="list" *ngFor="let category of getCategories()">
+    <p>{{category.name.toUpperCase()}}</p>
+    <app-food-card *ngFor="let dish of getDishes(category)"
+                   [dish]="dish"></app-food-card>
+  </ng-container>
+</div>

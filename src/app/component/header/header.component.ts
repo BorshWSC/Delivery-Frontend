@@ -54,4 +54,12 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.userService.deleteCurrentUser();
   }
+
+  showMenu() {
+    this.router.navigateByUrl('/menu');
+  }
+
+  showMain() {
+    this.router.navigateByUrl("");
+  }
 }

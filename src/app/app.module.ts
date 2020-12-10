@@ -21,6 +21,10 @@ import {MatButtonModule} from "@angular/material/button";
 import {CookieService} from "ngx-cookie-service";
 import { AuthorizationComponent } from './component/authorization/authorization.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { FoodCardComponent } from './component/food-card/food-card.component';
+import { MenuListComponent } from './component/menu-list/menu-list.component';
+import {CommonModule} from "@angular/common";
+import {MatOptionModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import { FooterComponent } from './component/footer/footer.component';
     MainComponent,
     HeaderComponent,
     AuthorizationComponent,
-    FooterComponent
+    FooterComponent,
+    FoodCardComponent,
+    MenuListComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +49,9 @@ import { FooterComponent } from './component/footer/footer.component';
     ReactiveFormsModule,
     MatSelectModule,
     CovalentDialogsModule,
-    MatButtonModule
+    MatButtonModule,
+    BrowserModule,
+    MatOptionModule
   ],
   providers: [
     ApiService,

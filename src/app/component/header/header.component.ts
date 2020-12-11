@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {AuthService} from "../../service/AuthService";
 import {ApiService} from "../../service/ApiService";
 import {DialogService} from "../../service/DialogService";
+import {dashCaseToCamelCase} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-header',
@@ -47,6 +48,12 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  public account(): void {
+    this.dialogService.showAccountDialog().afterClosed().subscribe(data => {
+
+    });
+  }
+
   isLogged(): boolean {
     return !!this.userService.getCurrentUser();
   }
@@ -55,8 +62,8 @@ export class HeaderComponent implements OnInit {
     this.userService.deleteCurrentUser();
   }
 
-  showMenu() {
-    this.router.navigateByUrl('/menu');
+  showMenu(category: number | null) {
+    this.router.navigate(['/menu'], {queryParams: {category: category}});
   }
 
   showMain() {

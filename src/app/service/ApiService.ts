@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
 import {User} from "../models/user";
 import {Category} from "../models/category";
 import {Dish} from "../models/dish";
+import {Comment} from "../models/Comment";
 
 @Injectable()
 export class ApiService {
@@ -35,6 +36,10 @@ export class ApiService {
     return this.http.post<T>(this.url + addUrl, JSON.stringify(body), this.options);
   }
 
+  private put<T>(addUrl: string, body: any): Observable<T> {
+    return this.http.put<T>(this.url + addUrl, JSON.stringify(body), this.options);
+  }
+
   private get<T>(addUrl: string): Observable<T> {
     return this.http.get<T>(this.url + addUrl, this.options);
   }
@@ -53,5 +58,13 @@ export class ApiService {
 
   getDishes(): Observable<Dish[]> {
     return this.get<Dish[]>('/dish');
+  }
+
+  addComment(comment: Comment): Observable<any> {
+    return this.post<any>('/comment/add', comment);
+  }
+
+  updateUser(user: User) {
+    return this.put<User>('/user/' + user.id, user);
   }
 }

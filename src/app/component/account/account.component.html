@@ -1,0 +1,77 @@
+<div>
+  <img src="assets/img/logo.svg" class="logo">
+  <mat-dialog-content>
+    <form [formGroup]="infoForm" class="form">
+      <mat-form-field class="input">
+        <mat-label><strong>Имя</strong></mat-label>
+        <input type="text" matInput formControlName="firstName"
+               placeholder="Иван">
+        <mat-error *ngIf="get('firstName').hasError('required')">
+          <strong>Имя обязательно</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label><strong>Фамилия</strong></mat-label>
+        <input type="text" matInput formControlName="lastName"
+               placeholder="Иванов">
+        <mat-error *ngIf="get('lastName').hasError('required')">
+          <strong>Фамилия обязательна</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label><strong>Адрес</strong></mat-label>
+        <input type="text" matInput formControlName="address"
+               placeholder="ул. Ленина 2">
+        <mat-error *ngIf="get('address').hasError('required')">
+          <strong>Адрес обязателен</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label><strong>Номер телефона</strong></mat-label>
+        <input type="text" matInput formControlName="phoneNumber"
+               placeholder="+7 999 999-99-99">
+        <mat-error *ngIf="get('phoneNumber').hasError('required')">
+          <strong>Номер телефона обязателен</strong>
+        </mat-error>
+        <mat-error *ngIf="get('phoneNumber').hasError('pattern')">
+          <strong>Номер телефона должен быть формата +7 999 999-99-99</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label><strong>Email</strong></mat-label>
+        <input type="email" matInput formControlName="email"
+               placeholder="ex.pat@example.com" [readonly]="true">
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label><strong>Пароль</strong></mat-label>
+        <input type="password" matInput formControlName="password"
+               placeholder="******">
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <form [formGroup]="commentForm" class="form">
+    <mat-form-field class="comment">
+      <mat-label>ОСТАВЬТЕ ОТЗЫВ</mat-label>
+      <textarea matInput
+                formControlName="commentArea"
+                [maxLength]="255"
+                rows="15"
+      ></textarea>
+      <button (click)="sendComment()"
+              [disabled]="!isCommentEnable()"
+              class="send"
+              mat-raised-button>
+        <img class="send-logo" src="assets/img/send.svg" width="50px" height="50px">
+      </button>
+      <div class="capacity">{{getComment().length}}/255</div>
+    </mat-form-field>
+  </form>
+  <td-dialog-actions layout="row" layout-align="start center" layout-fill>
+    <button (click)="cancel()" class="center white-button button"
+            mat-raised-button>Вернуться на сайт
+    </button>
+    <button mat-raised-button class="button center"
+            (click)="accept()">Подтвердить изменения
+    </button>
+  </td-dialog-actions>
+</div>

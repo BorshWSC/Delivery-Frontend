@@ -25,6 +25,7 @@ import { FoodCardComponent } from './component/food-card/food-card.component';
 import { MenuListComponent } from './component/menu-list/menu-list.component';
 import {CommonModule} from "@angular/common";
 import {MatOptionModule} from "@angular/material/core";
+import { AccountComponent } from './component/account/account.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatOptionModule} from "@angular/material/core";
     AuthorizationComponent,
     FooterComponent,
     FoodCardComponent,
-    MenuListComponent
+    MenuListComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

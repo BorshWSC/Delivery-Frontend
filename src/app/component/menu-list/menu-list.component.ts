@@ -3,6 +3,7 @@ import {ApiService} from "../../service/ApiService";
 import {Category} from "../../models/category";
 import {Dish} from "../../models/dish";
 import {AbstractControl, FormControl, FormGroup} from "@angular/forms";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-menu-list',
@@ -17,7 +18,8 @@ export class MenuListComponent implements OnInit {
   form!: FormGroup;
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private activatedRoute: ActivatedRoute
   ) {
     this.form = new FormGroup({
       categoryFormControl: new FormControl('')
@@ -28,6 +30,18 @@ export class MenuListComponent implements OnInit {
     this.apiService.getCategories().subscribe(data => {
       if (data) {
         this.categories = data;
+        this.activatedRoute.queryParams.subscribe(params => {
+          if (params) {
+            const category = params['category'];
+            if (category) {
+              this.get('categoryFormControl').setValue(
+                this.categories.find(it => it.id === Number(category))
+              );
+            } else {
+              this.get('categoryFormControl').setValue(null);
+            }
+          }
+        });
       }
     }, error => {
       console.log(error);

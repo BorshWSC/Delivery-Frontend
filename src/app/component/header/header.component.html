@@ -8,10 +8,10 @@
       </svg>
     </a>
   </li>
-  <li><a (click)="showMenu()">Основные Блюда</a></li>
-  <li><a>Сладости</a></li>
-  <li><a>Напитки</a></li>
-  <li *ngIf="isLogged()"><a class="push-right">Личный кабинет</a></li>
+  <li><a (click)="showMenu(null)">Основные Блюда</a></li>
+  <li><a (click)="showMenu(4)">Салаты</a></li>
+  <li><a (click)="showMenu(5)">Напитки</a></li>
+  <li *ngIf="isLogged()"><a class="push-right" (click)="account()">Личный кабинет</a></li>
   <li *ngIf="isLogged()">
     <a class="push-right">
       <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">

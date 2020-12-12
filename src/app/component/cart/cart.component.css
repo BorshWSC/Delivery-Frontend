@@ -1,0 +1,123 @@
+.form {
+  min-width: 1200px;
+  max-width: 1400px;
+  min-height: 100px;
+  padding-top: 40px;
+  width: 100%;
+}
+.logo {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.input {
+  width: 250px;
+  height: 60px;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+.main-button {
+  position: relative;
+  left: 40%;
+  width: 250px;
+  height: 60px;
+  color: white;
+  background: #54bf29;
+  transform: translate(-55%, 0);
+  margin-bottom: 5px;
+  margin-left: 30px;
+  margin-top: 30px;
+  border-radius: 70px;
+}
+.white-button {
+  color: rgba(65, 65, 65, 1);
+  background: #E5E5E5;
+}
+.del-button {
+  max-width: 90px;
+  min-width: 90px;
+  max-height: 30px;
+  min-height: 30px;
+  margin-top: unset;
+  left: 10%
+}
+.mat-error {
+  margin-top: 5px;
+  position: relative;
+  max-width: 400px;
+}
+.card {
+  width: 480px;
+  height: 190px;
+  background: #FCFCFC;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px 10px 10px 50px;
+}
+img {
+  display: inline;
+  margin: 10px auto auto 15px;
+  border-radius: 5px;
+}
+.card-img {
+  float: left;
+}
+.title {
+  float: left;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-left: 10px;
+}
+.description {
+  float: left;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  margin-left: 10px;
+  max-width: 250px;
+}
+.number-info {
+  float:left;
+  padding-left: 10px;
+}
+.weight {
+  padding-top: 7px;
+  float: left;
+  text-align: center;
+}
+.manage {
+  min-width: 150px;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  margin-left: 5px;
+}
+.manage a {
+  padding: 5px;
+  display: inline-block;
+  float: left;
+  font-size: 18px;
+  font-weight: 500;
+}
+.plus {
+  color: #54BF29;
+}
+.manage-buttons {
+  cursor: pointer;
+}
+.dish-list {
+  padding-left: 150px;
+}
+.total {
+  font-weight: 500;
+  font-size: 24px;
+  left: 40%;
+  position: relative;
+  margin-top: 20px;
+  max-width: 200px;
+}
+.total-number {
+  font-weight: 700;
+  display: inline;
+}

@@ -1,7 +1,7 @@
-<div>
+<div class="">
   <img src="assets/img/logo.svg" class="logo">
   <mat-dialog-content>
-    <form [formGroup]="infoForm" class="form">
+    <form [formGroup]="form" class="form">
       <mat-form-field class="input">
         <mat-label><strong>Имя</strong></mat-label>
         <input type="text" matInput formControlName="firstName"
@@ -37,42 +37,34 @@
           <strong>Номер телефона должен быть формата +7 999 999-99-99</strong>
         </mat-error>
       </mat-form-field>
-      <mat-form-field class="input">
-        <mat-label><strong>Email</strong></mat-label>
-        <input type="email" matInput formControlName="email"
-               placeholder="ex.pat@example.com" [readonly]="true">
-      </mat-form-field>
-      <mat-form-field class="input">
-        <mat-label><strong>Пароль</strong></mat-label>
-        <input type="password" matInput formControlName="password"
-               placeholder="******">
-      </mat-form-field>
     </form>
   </mat-dialog-content>
-  <form [formGroup]="commentForm" class="form">
-    <mat-form-field class="comment">
-      <mat-label>ОСТАВЬТЕ ОТЗЫВ</mat-label>
-      <textarea matInput
-                formControlName="commentArea"
-                [maxLength]="255"
-                rows="10"
-                style="resize: none;"
-      ></textarea>
-      <button (click)="sendComment()"
-              [disabled]="!isCommentEnable()"
-              class="send"
-              mat-raised-button>
-        <img class="send-logo" src="assets/img/send.svg" width="50px" height="50px">
-      </button>
-      <div class="capacity">{{getComment().length}}/255</div>
-    </mat-form-field>
-  </form>
+  <div class="dish-list">
+    <ng-form *ngFor="let dish of getCart()" class="card">
+      <img src="{{dish.image.link}}" class="card-img" height="160px"/>
+      <p class="title">{{dish.name}}</p>
+      <p class="number-info title">{{dish.cost}} Р</p>
+      <p class="number-info description weight">{{dish.weight}} г</p>
+      <p class="description">{{dish.description}}</p>
+      <div class="manage">
+        <a>Количество: </a>
+        <a class="manage-buttons" (click)="decrement(dish)">-</a>
+        <a>{{getCartService().cart.get(dish)}}</a>
+        <a class="plus manage-buttons" (click)="increment(dish)">+</a>
+        <button mat-raised-button class="center main-button del-button"
+                (click)="deleteFromCart(dish)">Удалить
+        </button>
+      </div>
+    </ng-form>
+    <div class="total">ИТОГО: <div class="total-number">{{getTotal()}}</div> Р</div>
+  </div>
   <td-dialog-actions layout="row" layout-align="start center" layout-fill>
-    <button (click)="cancel()" class="center white-button button"
-            mat-raised-button>Вернуться на сайт
+    <button mat-raised-button class="center main-button white-button"
+            (click)="cancel()">Вернуться на сайт
     </button>
-    <button mat-raised-button class="button center"
-            (click)="accept()">Подтвердить изменения
+    <button mat-raised-button class="center main-button"
+            [disabled]="!enabledForm()"
+            (click)="accept()">Подтвердить заказ
     </button>
   </td-dialog-actions>
 </div>

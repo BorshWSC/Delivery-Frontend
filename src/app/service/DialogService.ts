@@ -3,6 +3,7 @@ import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {RegistrationComponent} from "../component/registration/registration.component";
 import {AuthorizationComponent} from "../component/authorization/authorization.component";
 import {AccountComponent} from "../component/account/account.component";
+import {CartComponent} from "../component/cart/cart.component";
 
 @Injectable()
 export class DialogService {
@@ -33,6 +34,15 @@ export class DialogService {
   showAccountDialog(): MatDialogRef<AccountComponent> {
     return this.dialog.open(AccountComponent, {
       width: '815px',
+      height: '850px',
+      disableClose: true,
+      autoFocus: true
+    });
+  }
+
+  showCart(): MatDialogRef<CartComponent> {
+    return this.dialog.open(CartComponent, {
+      width: '1440px',
       height: '900px',
       disableClose: true,
       autoFocus: true

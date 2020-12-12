@@ -68,7 +68,6 @@ export class AccountComponent implements OnInit {
     } as User;
     this.apiService.updateUser(user).subscribe(data => {
       if (data) {
-        this.userService.deleteCurrentUser();
         this.userService.setCurrentUser(data);
         this.dialogRef.close(data);
       }

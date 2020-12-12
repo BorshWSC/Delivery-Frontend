@@ -26,6 +26,8 @@ import { MenuListComponent } from './component/menu-list/menu-list.component';
 import {CommonModule} from "@angular/common";
 import {MatOptionModule} from "@angular/material/core";
 import { AccountComponent } from './component/account/account.component';
+import { CartComponent } from './component/cart/cart.component';
+import {CartService} from "./service/CartService";
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { AccountComponent } from './component/account/account.component';
     FooterComponent,
     FoodCardComponent,
     MenuListComponent,
-    AccountComponent
+    AccountComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { AccountComponent } from './component/account/account.component';
     AuthService,
     DialogService,
     MatDialogConfig,
-    CookieService
+    CookieService,
+    CartService
   ],
   bootstrap: [AppComponent],
 

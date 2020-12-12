@@ -67,4 +67,8 @@ export class ApiService {
   updateUser(user: User) {
     return this.put<User>('/user/' + user.id, user);
   }
+
+  sendOrder(order: {[index: number]: any}, userId: string | undefined): Observable<any> {
+    return this.post<any>('/order/create/' + userId, order);
+  }
 }

@@ -17,10 +17,12 @@ export class UserService {
   }
 
   setCurrentUser(user: User) {
+    this.cookieService.delete('user');
     this.cookieService.set('user', JSON.stringify(user));
   }
 
   deleteCurrentUser() {
     this.cookieService.delete('user');
+    this.cookieService.delete('dish');
   }
 }

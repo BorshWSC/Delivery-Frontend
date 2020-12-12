@@ -12,6 +12,7 @@
   <ng-container class="list" *ngFor="let category of getCategories()">
     <p>{{category.name.toUpperCase()}}</p>
     <app-food-card *ngFor="let dish of getDishes(category)"
+                   [selected]="isSelected(dish)"
                    [dish]="dish"></app-food-card>
   </ng-container>
 </div>

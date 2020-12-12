@@ -4,6 +4,7 @@ import {Category} from "../../models/category";
 import {Dish} from "../../models/dish";
 import {AbstractControl, FormControl, FormGroup} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
+import {CartService} from "../../service/CartService";
 
 @Component({
   selector: 'app-menu-list',
@@ -19,7 +20,8 @@ export class MenuListComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private cartService: CartService
   ) {
     this.form = new FormGroup({
       categoryFormControl: new FormControl('')
@@ -66,5 +68,9 @@ export class MenuListComponent implements OnInit {
 
   getCategories(): Category[] {
     return this.get('categoryFormControl').value ? [this.get('categoryFormControl').value] : this.categories;
+  }
+
+  isSelected(dish: Dish): boolean {
+    return this.cartService.cart.has(dish);
   }
 }

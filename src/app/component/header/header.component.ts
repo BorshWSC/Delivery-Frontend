@@ -50,7 +50,11 @@ export class HeaderComponent implements OnInit {
 
   public account(): void {
     this.dialogService.showAccountDialog().afterClosed().subscribe(data => {
+    });
+  }
 
+  public cart() {
+    this.dialogService.showCart().afterClosed().subscribe(data => {
     });
   }
 

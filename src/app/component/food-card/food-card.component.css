@@ -33,11 +33,39 @@ img {
   padding-top: 7px;
 }
 button {
-  position: relative;
+  position: absolute;
   width: 150px;
   color: white;
   background: #54bf29;
-  transform: translate(35%, 0);
+  transform: translate(-80%, 0);
   margin-bottom: 5px;
   border-radius: 70px;
+  margin-top: 50px;
+}
+.manage {
+  min-width: 150px;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  margin-left: 5px;
+}
+.manage a {
+  padding: 5px;
+  display: inline-block;
+  float: left;
+  font-size: 18px;
+  font-weight: 500;
+}
+.plus {
+  color: #54BF29;
+}
+.manage-buttons {
+  cursor: pointer;
+}
+.del-button {
+  max-width: 90px;
+  min-width: 90px;
+  max-height: 30px;
+  min-height: 30px;
+  margin-top: 30px;
 }

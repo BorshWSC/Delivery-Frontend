@@ -27,7 +27,7 @@
 }
 .img {
   float: left;
-  margin-left: 100px;
+  margin-left: 160px;
 }
 .menu-main a, .menu-main a:visited {color: #000000;}
 .menu-main a.current, .menu-main a:hover{color: #000000; font-weight: bold}

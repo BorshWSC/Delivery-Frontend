@@ -1,0 +1,45 @@
+img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+.plate {
+  top: 280px;
+  right: 428px;
+}
+.block {
+  display: block;
+}
+button {
+  position: relative;
+  width: 190px;
+  height: 50px;
+  color: white;
+  background: #54bf29;
+  margin-bottom: 40px;
+  border-radius: 70px;
+  margin-top: 25px;
+}
+.info {
+  margin-left: 180px;
+  padding-top: 100px;
+}
+.price {
+  font-weight: 700;
+  font-size: 44px;
+  color: rgba(84, 191, 41, 1);
+  font-family: 'Montserrat', sans-serif;
+}
+.head {
+  font-weight: 400;
+  font-size: 36px;
+  max-width: 320px;
+  font-family: 'Montserrat', sans-serif;
+}
+.description {
+  font-weight: 400;
+  font-size: 20px;
+  max-width: 500px;
+  margin-top: 10px;
+}

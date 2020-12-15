@@ -1,0 +1,15 @@
+<ngb-carousel class="carousel"
+              *ngIf="comments"
+              [wrap]="true"
+              [showNavigationArrows]="true"
+
+>
+  <ng-template *ngFor="let comment of comments" ngbSlide>
+    <div class="main">
+      <p class="title">{{comment.user.firstName}}</p>
+      <div class="description">
+        {{comment.text}}
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>

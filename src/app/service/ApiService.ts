@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
 import {User} from "../models/user";
 import {Category} from "../models/category";
 import {Dish} from "../models/dish";
-import {Comment} from "../models/Comment";
+import {Comment} from "../models/comment";
 
 @Injectable()
 export class ApiService {
@@ -60,6 +60,10 @@ export class ApiService {
     return this.get<Dish[]>('/dish');
   }
 
+  getDishById(id: number): Observable<Dish> {
+    return this.get<Dish>('/dish/' + id);
+  }
+
   addComment(comment: Comment): Observable<any> {
     return this.post<any>('/comment/add', comment);
   }
@@ -70,5 +74,9 @@ export class ApiService {
 
   sendOrder(order: {[index: number]: any}, userId: string | undefined): Observable<any> {
     return this.post<any>('/order/create/' + userId, order);
+  }
+
+  getComments(): Observable<Comment[]> {
+    return this.get<Comment[]>('/comment');
   }
 }

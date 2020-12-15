@@ -4,7 +4,7 @@ import {AuthService} from "../../service/AuthService";
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../service/UserService";
 import {ApiService} from "../../service/ApiService";
-import {Comment} from "../../models/Comment";
+import {Comment} from "../../models/comment";
 import {User} from "../../models/user";
 
 @Component({

@@ -41,7 +41,7 @@
   </mat-dialog-content>
   <div class="dish-list">
     <ng-form *ngFor="let dish of getCart()" class="card">
-      <img src="{{dish.image.link}}" class="card-img" height="160px"/>
+      <img src="{{dish.image.link}}" class="card-img"/>
       <p class="title">{{dish.name}}</p>
       <p class="number-info title">{{dish.cost}} Р</p>
       <p class="number-info description weight">{{dish.weight}} г</p>

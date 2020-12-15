@@ -13,7 +13,7 @@
     <a class="manage-buttons" (click)="decrement(dish)">-</a>
     <a>{{getCartService().cart.get(dish)}}</a>
     <a class="plus manage-buttons" (click)="increment(dish)">+</a>
-    <button mat-raised-button class="center main-button del-button"
+    <button mat-raised-button class="center del-button"
             (click)="deleteFromCart(dish)">Удалить
     </button>
   </div>

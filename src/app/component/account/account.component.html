@@ -54,7 +54,7 @@
       <mat-label>ОСТАВЬТЕ ОТЗЫВ</mat-label>
       <textarea matInput
                 formControlName="commentArea"
-                [maxLength]="255"
+                [maxLength]="500"
                 rows="10"
                 style="resize: none;"
       ></textarea>
@@ -64,7 +64,7 @@
               mat-raised-button>
         <img class="send-logo" src="assets/img/send.svg" width="50px" height="50px">
       </button>
-      <div class="capacity">{{getComment().length}}/255</div>
+      <div class="capacity">{{getComment().length}}/500</div>
     </mat-form-field>
   </form>
   <td-dialog-actions layout="row" layout-align="start center" layout-fill>

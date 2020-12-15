@@ -28,6 +28,8 @@ import {MatOptionModule} from "@angular/material/core";
 import { AccountComponent } from './component/account/account.component';
 import { CartComponent } from './component/cart/cart.component';
 import {CartService} from "./service/CartService";
+import {MatCarouselModule} from "@ngmodule/material-carousel";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import {CartService} from "./service/CartService";
     CovalentDialogsModule,
     MatButtonModule,
     BrowserModule,
-    MatOptionModule
+    MatOptionModule,
+    MatCarouselModule,
+    NgbModule
   ],
   providers: [
     ApiService,

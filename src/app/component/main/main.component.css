@@ -1,0 +1,25 @@
+.main {
+  width: 500px;
+  height: 190px;
+  margin: 15px;
+  background: #FCFCFC;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: inline-block;
+}
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.description {
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+.carousel {
+  max-width: 525px;
+  margin-left: 170px;
+}

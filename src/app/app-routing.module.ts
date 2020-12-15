@@ -1,5 +1,4 @@
 import {RouterModule, Routes} from '@angular/router';
-import {RegistrationComponent} from './component/registration/registration.component';
 import {MainComponent} from './component/main/main.component';
 import {MenuListComponent} from "./component/menu-list/menu-list.component";
 

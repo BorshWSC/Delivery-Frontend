@@ -67,7 +67,8 @@ export class CartComponent implements OnInit {
     return this.get('firstName').valid &&
       this.get('lastName').valid &&
       this.get('phoneNumber').valid &&
-      this.get('address').valid;
+      this.get('address').valid &&
+      this.getTotal() !== 0;
   }
 
   deleteFromCart(dish: Dish) {

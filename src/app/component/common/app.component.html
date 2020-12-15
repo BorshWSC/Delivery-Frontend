@@ -1,3 +1,16 @@
 <app-header></app-header>
+<div class="info">
+  <div class="price">159 Р</div>
+  <div class="head">Азиатский салат с говядиной</div>
+  <div class="description">Азиатский салат – то самое решение: хрустящие овощи, пикантное мясо, оригинальная заправка и острая нотка. Говядина, огурец, морковь. Подается с соевым соусом</div>
+  <button  mat-raised-button class="center"
+          (click)="addToCart()"
+  >ЗАКАЗАТЬ СЕЙЧАС
+  </button>
+</div>
+<div class="block">
+  <img src="assets/img/main-1.png" />
+  <img class="plate" src="assets/img/main-2.png" />
+</div>
 <router-outlet></router-outlet>
 <app-footer></app-footer>

@@ -5,6 +5,7 @@ import {AuthService} from "../../service/AuthService";
 import {ApiService} from "../../service/ApiService";
 import {DialogService} from "../../service/DialogService";
 import {dashCaseToCamelCase} from "@angular/compiler/src/util";
+import {CartService} from "../../service/CartService";
 
 @Component({
   selector: 'app-header',
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
     private apiService: ApiService,
     private userService: UserService,
     private dialogService: DialogService,
+    private cartService: CartService,
     protected router: Router
   ) { }
 
@@ -72,5 +74,9 @@ export class HeaderComponent implements OnInit {
 
   showMain() {
     this.router.navigateByUrl("");
+  }
+
+  isCartEmpty(): boolean {
+    return this.cartService.cart.size === 0;
   }
 }

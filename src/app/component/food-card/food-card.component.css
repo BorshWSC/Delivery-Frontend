@@ -9,7 +9,7 @@
 }
 img {
   display:block;
-  margin:auto;
+  margin: 20px auto auto;
   border-radius: 5px;
 }
 .title {
@@ -21,6 +21,8 @@ img {
   font-size: 13px;
   font-weight: 400;
   text-align: center;
+  max-width: 250px;
+  margin-left: 5px;
 }
 .number-info {
   float:left;
@@ -37,10 +39,10 @@ button {
   width: 150px;
   color: white;
   background: #54bf29;
-  transform: translate(-80%, 0);
   margin-bottom: 5px;
   border-radius: 70px;
   margin-top: 50px;
+  left: 55px;
 }
 .manage {
   min-width: 150px;
@@ -52,7 +54,6 @@ button {
 .manage a {
   padding: 5px;
   display: inline-block;
-  float: left;
   font-size: 18px;
   font-weight: 500;
 }
@@ -67,5 +68,7 @@ button {
   min-width: 90px;
   max-height: 30px;
   min-height: 30px;
-  margin-top: 30px;
+  margin-top: unset;
+  margin-right: 115px;
+  position: relative;
 }

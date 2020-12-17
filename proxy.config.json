@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://localhost:8080",
+    "target": "https://delivery-backend-201217131044.azurewebsites.net",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
